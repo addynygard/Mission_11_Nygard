@@ -4,6 +4,9 @@ import { Book } from './types/Book';
 function BookList() {
   const [books, setBooks] = useState<Book[]>([]);
 
+  const [sortedBooks, setSortedBooks] = useState<Book[]>([]);
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+
   const [pageSize, setpageSize] = useState<number>(10);
 
   const [pageNum, setpageNum] = useState<number>(1);
@@ -26,14 +29,29 @@ function BookList() {
     fetchBooks();
   }, [pageSize, pageNum]); // if something changes, you want this function UseEffect to run again!
 
+  // Sort books when books or sortOrder changes
+  useEffect(() => {
+    const sorted = [...books].sort((a, b) => {
+      return sortOrder === 'asc'
+        ? a.title.localeCompare(b.title)
+        : b.title.localeCompare(a.title);
+    });
+    setSortedBooks(sorted);
+  }, [books, sortOrder]);
+
   return (
     <>
       <h1>List of Hilton's Favorite Books</h1>
       <br />
 
-      {/* shows each card with the book's information  */}
-      {books.map((b) => (
-        <div id="bookCard" className="card" key="b.bookID">
+      {/* Sort Buttons */}
+      <button onClick={() => setSortOrder('asc')}>Sort A-Z</button>
+      <button onClick={() => setSortOrder('desc')}>Sort Z-A</button>
+      <br />
+
+      {/* Show sorted books */}
+      {sortedBooks.map((b) => (
+        <div id="bookCard" className="card" key={b.bookID}>
           <h3 className="card-title">{b.title}</h3>
           <div className="card-body">
             <ul className="list-unstyled">
