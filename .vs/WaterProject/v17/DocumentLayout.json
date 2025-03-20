@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dragy\\OneDrive - nygardadvisors.com\\Desktop\\Mission_11_Nygard\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3449A555-D8C6-461B-AE5E-E2D262EDB455}|backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj|c:\\users\\dragy\\onedrive - nygardadvisors.com\\desktop\\mission_11_nygard\\backend\\mission_11_nygard.api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3449A555-D8C6-461B-AE5E-E2D262EDB455}|backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj|solutionrelative:backend\\mission_11_nygard.api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3449A555-D8C6-461B-AE5E-E2D262EDB455}|backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj|c:\\users\\dragy\\onedrive - nygardadvisors.com\\desktop\\mission_11_nygard\\backend\\mission_11_nygard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3449A555-D8C6-461B-AE5E-E2D262EDB455}|backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj|solutionrelative:backend\\mission_11_nygard.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3449A555-D8C6-461B-AE5E-E2D262EDB455}|backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj|c:\\users\\dragy\\onedrive - nygardadvisors.com\\desktop\\mission_11_nygard\\backend\\mission_11_nygard.api\\mission_11_nygard.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3449A555-D8C6-461B-AE5E-E2D262EDB455}|backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj|solutionrelative:backend\\mission_11_nygard.api\\mission_11_nygard.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\dragy\\OneDrive - nygardadvisors.com\\Desktop\\Mission_11_Nygard\\backend\\Mission_11_Nygard.API\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "backend\\Mission_11_Nygard.API\\Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\dragy\\OneDrive - nygardadvisors.com\\Desktop\\Mission_11_Nygard\\backend\\Mission_11_Nygard.API\\Controllers\\BookController.cs",
+              "RelativeToolTip": "backend\\Mission_11_Nygard.API\\Controllers\\BookController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T19:41:25.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dragy\\OneDrive - nygardadvisors.com\\Desktop\\Mission_11_Nygard\\backend\\Mission_11_Nygard.API\\Program.cs",
+              "RelativeDocumentMoniker": "backend\\Mission_11_Nygard.API\\Program.cs",
+              "ToolTip": "C:\\Users\\dragy\\OneDrive - nygardadvisors.com\\Desktop\\Mission_11_Nygard\\backend\\Mission_11_Nygard.API\\Program.cs",
+              "RelativeToolTip": "backend\\Mission_11_Nygard.API\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T19:27:59.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mission_11_Nygard.API.csproj",
+              "DocumentMoniker": "C:\\Users\\dragy\\OneDrive - nygardadvisors.com\\Desktop\\Mission_11_Nygard\\backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj",
+              "RelativeDocumentMoniker": "backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj",
+              "ToolTip": "C:\\Users\\dragy\\OneDrive - nygardadvisors.com\\Desktop\\Mission_11_Nygard\\backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj",
+              "RelativeToolTip": "backend\\Mission_11_Nygard.API\\Mission_11_Nygard.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-20T19:15:20.339Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
