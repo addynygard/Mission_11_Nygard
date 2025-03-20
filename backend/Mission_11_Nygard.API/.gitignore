@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+*.log
+*.tlog
+
+node_modules/
+.vscode/

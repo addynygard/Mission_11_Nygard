@@ -1,0 +1,6 @@
+@Mission_11_Nygard.API_HostAddress = http://localhost:5117
+
+GET {{Mission_11_Nygard.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
