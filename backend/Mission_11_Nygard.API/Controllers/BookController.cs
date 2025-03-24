@@ -16,11 +16,20 @@ namespace Mission_11_Nygard.API.Controllers
         }
 
         //[HttpGet("AllProjects")] // Way of routing so that you can have multiple different apis on the same data (functional vs non functional for the next one)
-        public IActionResult GetBooks(int pageHowMany = 10, int pageNum = 1) // defulat value of 5 if there is nothing in there 
+        public IActionResult GetBooks(int pageHowMany = 10, int pageNum = 1, [FromQuery] List<string>? bookTypes = null) // defulat value of 5 if there is nothing in there 
         {
-            var something = _bookContext.Books.Skip((pageNum - 1) * pageHowMany).Take(pageHowMany).ToList();
+            var query = _bookContext.Books.AsQueryable(); // Cast to IQueryable<Book>
 
-            var totalNumBooks = _bookContext.Books.Count(); // counts the number of books in the database
+            if (bookTypes != null && bookTypes.Any())
+            {
+                query = query.Where(x => bookTypes.Contains(x.Category));
+            }
+
+            var totalNumBooks = query.Count(); // counts the number of books in the database
+
+            var something = query.Skip((pageNum - 1) * pageHowMany).Take(pageHowMany).ToList();
+
+          
 
             var someObject = new
             {
@@ -31,6 +40,14 @@ namespace Mission_11_Nygard.API.Controllers
             return Ok(someObject); // new way to return information that allow us to pass through 2 returns essentially through an object
         }
 
+        // This will grab and put together a list of category types of books to be passed to the frontend
+        [HttpGet("GetCategoryTypes")]
+        public IActionResult GetCategoryTypes()
+        {
+            var categoryTypes = _bookContext.Books.Select(x => x.Category).Distinct().ToList();
+
+            return Ok(categoryTypes);
+        }
 
     }
 }
