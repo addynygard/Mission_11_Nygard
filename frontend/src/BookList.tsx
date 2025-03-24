@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Book } from './types/Book';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
 
   const [sortedBooks, setSortedBooks] = useState<Book[]>([]);
@@ -17,8 +17,12 @@ function BookList() {
 
   useEffect(() => {
     const fetchBooks = async () => {
+      const categoryParams = selectedCategories
+        .map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
+        .join('&');
+
       const response = await fetch(
-        `http://localhost:5117/Book?pageHowMany=${pageSize}&pageNum=${pageNum}`,
+        `http://localhost:5117/Book?pageHowMany=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`,
       );
       const data = await response.json();
       setBooks(data.books);
@@ -27,7 +31,7 @@ function BookList() {
     };
 
     fetchBooks();
-  }, [pageSize, pageNum]); // if something changes, you want this function UseEffect to run again!
+  }, [pageSize, pageNum, selectedCategories]); // if something changes, you want this function UseEffect to run again!
 
   // Sort books when books or sortOrder changes
   useEffect(() => {
