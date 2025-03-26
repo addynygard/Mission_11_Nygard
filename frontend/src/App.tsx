@@ -1,32 +1,24 @@
-import { useState } from 'react';
 import './App.css';
-import BookList from './BookList';
-import CategoryFilter from './CategoryFilter';
-import WelcomeBand from './WelcomeBand';
+import ProjectsPage from './pages/ProjectsPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CartPage from './pages/CartPage';
+import DisplayCartPage from './pages/DisplayCartPage';
+import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-3">
-            <WelcomeBand />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-3">
-            <CategoryFilter
-              selectedCategories={selectedCategories}
-              setSelectedCategories={setSelectedCategories}
-            />
-          </div>
-          <div className="col-md-9">
-            <BookList selectedCategories={selectedCategories} />
-          </div>
-        </div>
-      </div>
+      {/* comes from CartContext.tsx file */}
+      <CartProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<ProjectsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/cart/:bookName/:bookID" element={<CartPage />} />
+            <Route path="/cart" element={<DisplayCartPage />} />
+          </Routes>
+        </Router>
+      </CartProvider>
     </>
   );
 }
