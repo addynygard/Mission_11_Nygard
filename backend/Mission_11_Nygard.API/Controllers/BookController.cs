@@ -15,7 +15,7 @@ namespace Mission_11_Nygard.API.Controllers
             _bookContext = temp;
         }
 
-        //[HttpGet("AllProjects")] // Way of routing so that you can have multiple different apis on the same data (functional vs non functional for the next one)
+        [HttpGet("AllProjects")] // Way of routing so that you can have multiple different apis on the same data (functional vs non functional for the next one)
         public IActionResult GetBooks(int pageHowMany = 10, int pageNum = 1, [FromQuery] List<string>? bookTypes = null) // defulat value of 5 if there is nothing in there 
         {
             var query = _bookContext.Books.AsQueryable(); // Cast to IQueryable<Book>

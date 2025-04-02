@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/9a693142-5f5d-445a-8ca7-04857d6e2ff3/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/Mission11-Nygard-Backend",
+  "appService.deploySubpath": "backend\\Mission_11_Nygard.API\\publish"
+}
