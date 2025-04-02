@@ -49,5 +49,53 @@ namespace Mission_11_Nygard.API.Controllers
             return Ok(categoryTypes);
         }
 
+
+        [HttpPost("AddBook")]
+        // we need an api action to add a book to the list/database
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            _bookContext.Books.Add(newBook); // add the new book to the database
+            _bookContext.SaveChanges(); // save the changes to the database
+            return Ok(newBook); // return the new book that was added to the database
+        }
+
+        // This will get a specific book from the database
+        [HttpPut("UpdateBook/{BookID}")]
+        public IActionResult UpdateBook(int BookID, [FromBody] Book updatedBook)
+        {
+            var existingBook = _bookContext.Books.Find(BookID); // find the book in the database
+
+            // update the book information
+            existingBook.Title = updatedBook.Title; 
+            existingBook.Author = updatedBook.Author;
+            existingBook.Publisher = updatedBook.Publisher;
+            existingBook.ISBN = updatedBook.ISBN;
+            existingBook.Classification = updatedBook.Classification;
+            existingBook.Category = updatedBook.Category;
+            existingBook.PageCount = updatedBook.PageCount;
+
+            _bookContext.Books.Update(existingBook); // update the book in the database
+            _bookContext.SaveChanges(); // save the changes to the database
+
+            return Ok(existingBook); // return the updated book
+        }
+
+        // This will delete a book from the database
+        [HttpDelete("DeleteBook/{BookID}")]
+        public IActionResult DeleteBook(int BookID)
+        {
+            var book = _bookContext.Books.Find(BookID); // find the book in the database
+
+            if (book == null) // if the book does not exist in the database
+            {
+                return NotFound(new {message = "Book not found"}); // return a 404 error
+            }
+
+            _bookContext.Books.Remove(book); // remove the book from the database
+            _bookContext.SaveChanges(); // save the changes to the database
+
+            return Ok(book); // return the deleted book
+        }
+
     }
 }
